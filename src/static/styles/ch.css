@@ -1,0 +1,107 @@
+.main-wrapper {
+  background: url(/static/images/hero_image.jpg) no-repeat 0% top;
+  background-size: cover;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+}
+
+.main-wrapper .fill-viewport {
+  height: 100vh;
+  min-height: 107rem;
+  justify-content: center;
+}
+
+#tagline {
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-family: "Haas Grot Text Web", "Helvetica Neue", helvetica, arial,
+    sans-serif;
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+.main-props-container {
+  margin-left: 10%;
+  width: 30%;
+  background-color: white;
+}
+
+.hero-tab-1 {
+  width: 10%;
+}
+
+.logo {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+button.active {
+  border: 0;
+  box-shadow: inset -1px 0 0 0 #dde0e3;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 2.25rem 3rem;
+  line-height: 3rem;
+  background-color: #001a96;
+  color: #fff;
+}
+
+input[type="search"] {
+  display: block;
+  min-height: 40px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  background: #fff;
+  border-color: #e3e3e3;
+  color: #3d3d3d;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: normal;
+  line-height: inherit;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+}
+
+.search-button-container {
+  background-color: #e00099;
+  color: white;
+}
+
+.fright {
+  float: right;
+  position: relative;
+  top: 3px;
+  right: 3px;
+}
+
+.tagheader {
+  font-size: 7.5rem;
+  font-weight: 700;
+}
+
+.ch-tag-subtitle {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.search-input {
+  width: 23%;
+}
