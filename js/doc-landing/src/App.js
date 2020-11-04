@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { Link, Router } from "@reach/router"
 
-const baseUrl = "http://localhost:5000"
+const baseUrl = "http://127.0.0.1:5000"
 
 const Header = () => (
   <header id="ch-header" className="p-1">
