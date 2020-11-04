@@ -23,6 +23,7 @@
         minLength: 1,
         select: function (event, ui) {
           console.log(ui.item)
+          window.location.href = 'http://localhost:3000/' + ui.item.value
         },
       })
     })

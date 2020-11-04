@@ -1,9 +1,12 @@
 from flask import Flask, request, Response
 from flask import render_template
+from flask_cors import CORS
+
 import json
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 docs_json = os.path.join(SITE_ROOT, "static/", "docs.json")
@@ -28,5 +31,12 @@ def search():
                     'label': data[key]['name']
                 })
 
-
     return Response(json.dumps(titles), mimetype='application/json')
+
+
+@ app.route('/docInfo')
+def docInfo():
+    term = request.args.get('doc')
+    with open(docs_json) as json_file:
+        data = json.load(json_file)
+    return data[term]

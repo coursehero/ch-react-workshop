@@ -1,0 +1,24 @@
+#ch-header.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999999;
+    width: 100%;
+}
+#ch-header {
+    position: relative;
+    background-color: #001a96;
+    align-items: center;
+    /* max-height: 72px; */
+    z-index: 10;
+}
+header {
+    display: block;
+}
+
+body {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
