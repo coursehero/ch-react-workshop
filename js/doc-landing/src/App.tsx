@@ -1,10 +1,9 @@
-import "./App.css"
+import * as React from 'react'
+import { Link, Router } from '@reach/router'
 
-import * as React from "react"
+import './App.css'
 
-import { Link, Router } from "@reach/router"
-
-const baseUrl = "http://127.0.0.1:5000"
+const baseUrl = 'http://127.0.0.1:5000'
 
 const Header = () => (
   <header id="ch-header" className="p-1">
@@ -18,8 +17,8 @@ const Header = () => (
   </header>
 )
 
-const DocLanding = (props) => {
-  const [docProps, setDocProps] = React.useState([])
+const DocLanding = (props: any) => {
+  const [docProps, setDocProps] = React.useState<any>([])
 
   React.useEffect(() => {
     async function fetchData() {
@@ -29,7 +28,7 @@ const DocLanding = (props) => {
         ).json()
         setDocProps(response)
       } catch (e) {
-        console.log("Error", e)
+        console.log('Error', e)
       }
     }
     fetchData()
@@ -43,40 +42,40 @@ const DocLanding = (props) => {
       <RelatedDocs docProps={docProps} />
 
       <div className="d-flex">
-        <div style={{ width: "30%" }}></div>
+        <div style={{ width: '30%' }}></div>
         <div className="shadow-lg p-3 mb-5 bg-white rounded">
           <div>{docProps.text}</div>
         </div>
-        <div style={{ width: "30%" }}></div>
+        <div style={{ width: '30%' }}></div>
       </div>
     </div>
   )
 }
 
-const Breadcrumbs = ({ docProps }) => (
+const Breadcrumbs = ({ docProps }: any) => (
   <div className="breadcrumbs m-1">
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">{docProps.school}</li>
-        <li class="breadcrumb-item">{docProps.department}</li>
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item">{docProps.school}</li>
+        <li className="breadcrumb-item">{docProps.department}</li>
         <li className="breadcrumb-item">{docProps.name}</li>
       </ol>
     </nav>
   </div>
 )
 
-const Title = ({ docProps }) => (
+const Title = ({ docProps }: any) => (
   <div className="title">
     <h1 className="m-3">{docProps.name}</h1>
     <h2 className="m-3">{docProps.school}</h2>
   </div>
 )
 
-const RelatedDocs = ({ docProps }) => (
+const RelatedDocs = ({ docProps }: any) => (
   <div className="related-docs">
     <ul>
       {docProps.related &&
-        docProps.related.map((doc) => (
+        docProps.related.map((doc: any) => (
           <li key={doc}>
             <Link to={`/${doc}`}>{doc}</Link>
           </li>
