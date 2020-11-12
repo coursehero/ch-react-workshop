@@ -7,12 +7,6 @@ import { App } from './components/App/App'
 
 import './index.css'
 
-if (process.env.NODE_ENV === 'development') {
-  const { worker } = require('./test-utils/browser')
-
-  worker.start()
-}
-
 ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
