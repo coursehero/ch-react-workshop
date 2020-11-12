@@ -3,9 +3,15 @@ import * as ReactDOM from 'react-dom'
 
 import reportWebVitals from './reportWebVitals'
 
-import App from './App'
+import { App } from './components/App/App'
 
 import './index.css'
+
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./test-utils/browser')
+
+  worker.start()
+}
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

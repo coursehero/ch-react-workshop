@@ -11,7 +11,6 @@ CORS(app)
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 docs_json = os.path.join(SITE_ROOT, "static/", "docs.json")
 
-
 @ app.route('/')
 def index():
     return render_template('index.html')
@@ -36,7 +35,7 @@ def search():
 
 @ app.route('/docInfo')
 def docInfo():
-    term = request.args.get('doc')
+    term = request.args.get('docName')
     with open(docs_json) as json_file:
         data = json.load(json_file)
     return data[term]
