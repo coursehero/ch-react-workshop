@@ -1,12 +1,14 @@
+import './DocLanding.css'
+
 import * as React from 'react'
-import { useState, useEffect } from 'react'
 
-import { BASE_URL } from '../constants'
+import { useEffect, useState } from 'react'
 
-import { Header } from './Header'
-import { Breadcrumbs } from './Breadcrumbs'
-import { Title } from './Title'
-import { RelatedDocs } from './RelatedDocs'
+import { BASE_URL } from '../../constants'
+import { Breadcrumbs } from '../Breadcrumbs'
+import { Header } from '../Header'
+import { RelatedDocs } from '../RelatedDocs'
+import { Title } from '../Title'
 
 export const DocLanding = (props: any) => {
   const { docName } = props
@@ -42,8 +44,16 @@ export const DocLanding = (props: any) => {
 
           <div className="col-9">
             <div className="shadow-lg p-3 mb-5 bg-white rounded">
-              <div>{doc.text}</div>
+              <p className="docText">{doc.text}</p>
             </div>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                window.location.href = 'https://coursehero.com/register'
+              }}
+            >
+              Unlock Document
+            </button>
           </div>
         </div>
       </div>
