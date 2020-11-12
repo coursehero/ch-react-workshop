@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Router } from '@reach/router'
-
-import { DocLanding } from '../DocLanding'
-
 import './App.css'
+
+import * as React from 'react'
+
+import { DocLanding } from '../DocLanding/DocLanding'
+import { Router } from '@reach/router'
 
 export const App = () => {
   return (
