@@ -1,14 +1,16 @@
-import './App.css'
-
 import * as React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { DocLanding } from '../DocLanding/DocLanding'
-import { Router } from '@reach/router'
+
+import './App.css'
 
 export const App = () => {
   return (
     <Router>
-      <DocLanding path="/:docName" />
+      <Switch>
+        <Route path="/:docName" component={DocLanding} />
+      </Switch>
     </Router>
   )
 }
