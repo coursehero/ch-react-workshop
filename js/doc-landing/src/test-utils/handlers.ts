@@ -1,9 +1,9 @@
 import { rest } from 'msw'
-import { DEFAULT_DOC } from '../constants'
+import { BASE_URL, DEFAULT_DOC } from '../constants'
 import { MOCK_DOCS } from './mocks'
 
 export const handlers = [
-  rest.get('http://127.0.0.1:5000/docInfo', (req, res, ctx) => {
+  rest.get(`${BASE_URL}/docInfo`, (req, res, ctx) => {
     const docName = req.url.searchParams.get('docName')
 
     if (docName !== null && MOCK_DOCS[docName] !== undefined) {

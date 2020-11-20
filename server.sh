@@ -4,5 +4,6 @@ export FLASK_DEBUG=1
 export FLASK_APP=src/index.py
 . venv/bin/activate
 pip install -r requirements.txt
-flask run
+flask run -h localhost -p 5005
+
 
