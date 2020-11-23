@@ -1,8 +1,8 @@
 {
-  "BIO 101": {
+  "BIO-101": {
     "name": "Introduction to Biology",
     "school": "Stanford University",
-    "department": "BIO",
+    "department": "BIO-101",
     "text": "Sed vehicula sapien quis lacinia varius. Etiam condimentum tortor quis auctor ullamcorper. Praesent pulvinar nec dui ut eleifend. Vestibulum euismod, metus eu elementum mollis, tellus nulla gravida sem, ut faucibus velit risus quis nunc. In hac habitasse platea dictumst. Maecenas rutrum molestie dapibus. Curabitur hendrerit dui neque, ut feugiat erat facilisis sed. Vestibulum vehicula hendrerit hendrerit. Proin mollis gravida ligula, id aliquet eros congue dapibus. Cras auctor quam urna, tristique dignissim erat elementum eget. Fusce pellentesque egestas metus. Donec id ex nec ante mollis luctus eget ac ante. Pellentesque rhoncus sit amet est id ultrices. Vivamus vehicula enim vel nisi dapibus blandit.",
     "related": ["HOW"]
   },
