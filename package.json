@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@testing-library/cypress": "^7.0.1"
+  }
+}
