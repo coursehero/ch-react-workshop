@@ -1,6 +1,6 @@
 # ch-react-workshop
 
-Run  `./server.sh` to start Python Flask backend.
+Run  `./server.sh` to start the node/Express backend.
 
 In another terminal run `./client.sh` to start React development server.
 
