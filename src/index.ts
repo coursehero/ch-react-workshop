@@ -20,15 +20,17 @@ app.get('/', function (req, res) {
 })
 
 app.get('/search', function (req, res) {
-  const filtered = Object.keys(data)
-    .filter((key) => key.toUpperCase().includes(req.query.term.toUpperCase()))
-    .map((key) => {
-      return {
-        value: key,
-        label: data[key]['name'],
-      }
-    })
-  res.send(filtered)
+  const filtered = Object.keys(data).filter((key) =>
+    data[key]['name'].toUpperCase().includes(req.query.term.toUpperCase()),
+  )
+  const items = filtered.map((key) => {
+    return {
+      value: key,
+      label: data[key]['name'],
+    }
+  })
+
+  res.send(items)
 })
 
 app.get('/docInfo', function (req, res) {
@@ -38,3 +40,4 @@ app.get('/docInfo', function (req, res) {
 app.listen(port, () => {
   console.log(`chapp listening at http://localhost:${port}`)
 })
+
