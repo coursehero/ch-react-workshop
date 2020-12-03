@@ -6,4 +6,4 @@ In another terminal run `./client.sh` to start React development server.
 
 Then visit http://127.0.0.1:5000/ in your browser.
 
-See the Wiki for more information.
+See the [[Wiki|Home]] for more information.
