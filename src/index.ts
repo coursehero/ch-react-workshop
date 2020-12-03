@@ -38,10 +38,3 @@ app.get('/docInfo', function (req, res) {
 app.listen(port, () => {
   console.log(`chapp listening at http://localhost:${port}`)
 })
-
-// @ app.route('/docInfo')
-// def docInfo():
-//     term = request.args.get('docName')
-//     with open(docs_json) as json_file:
-//         data = json.load(json_file)
-//     return data[term]
