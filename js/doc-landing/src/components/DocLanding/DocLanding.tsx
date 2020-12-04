@@ -1,19 +1,22 @@
-
 import * as React from 'react'
-
-import { BASE_URL } from '../../constants'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { Doc, Status, RouterParams } from '../../types'
+import { BASE_URL } from '../../constants'
 
 import { Header } from '../Header'
-import { Breadcrumbs } from '../Breadcrumbs'
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs'
 import { Title } from '../Title'
-import { RelatedDocs } from '../RelatedDocs'
+import { RelatedDocs } from '../RelatedDocs/RelatedDocs'
+import { ErrorMessage } from '../ErrorMessage'
 
 import './DocLanding.css'
 
-export const DocLanding = (props: any) => {
-  const { docName } = props
-  const [doc, setdoc] = useState<any>([])
+export const DocLanding = () => {
+  const { docName } = useParams<RouterParams>()
+  const [status, setStatus] = useState(Status.Loading)
+  const [doc, setDoc] = useState(getInitialState)
 
   useEffect(() => {
     async function fetchData() {
@@ -22,42 +25,79 @@ export const DocLanding = (props: any) => {
           await fetch(`${BASE_URL}/docInfo?docName=${docName}`)
         ).json()
 
-        setdoc(response)
+        setStatus(Status.Success)
+        setDoc(response)
       } catch (e) {
-        console.log('Error', e)
+        console.error(e)
+        setStatus(Status.Error)
       }
     }
 
     fetchData()
   }, [docName])
 
-  return (
-    <div className="App">
-      <Header />
+  switch (status) {
+    case Status.Loading:
+      return (
+        <>
+          <Header />
 
-      <div className="container">
-        <Breadcrumbs doc={doc} />
+          <div className="d-flex mt-5" data-testid="doc-landing-spinner">
+            <div className="ml-auto mr-auto h6">Loading...</div>
+          </div>
+        </>
+      )
 
-        <Title doc={doc} />
+    case Status.Success: {
+      const { name, school, department, text, related } = doc
+      const breadcrumbs = [school, department, name]
 
-        <div className="row mt-5">
-          <RelatedDocs doc={doc} />
+      return (
+        <div>
+          <Header />
 
-          <div className="col-9">
-            <div className="shadow-lg p-3 mb-5 bg-white rounded">
-              <p className="docText">{doc.text}</p>
+          <div className="container">
+            <Breadcrumbs items={breadcrumbs} />
+
+            <Title name={name} school={school} />
+
+            <div className="row mt-5">
+              <RelatedDocs related={related} />
+
+              <div className="col-9">
+                <div className="shadow-lg p-3 mb-5 bg-white rounded">
+                  <p className="doc-text">{text}</p>
+                </div>
+
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    window.location.href = 'https://coursehero.com/register'
+                  }}
+                >
+                  Unlock Document
+                </button>
+              </div>
             </div>
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                window.location.href = 'https://coursehero.com/register'
-              }}
-            >
-              Unlock Document
-            </button>
           </div>
         </div>
-      </div>
-    </div>
-  )
+      )
+    }
+
+    case Status.Error:
+      return <ErrorMessage />
+
+    default:
+      throw new Error(`Unhandled status: ${status}`)
+  }
 }
+
+// Sets the initial state for the document
+const getInitialState = (): Doc => ({
+  id: 0,
+  name: '',
+  school: '',
+  department: '',
+  text: '',
+  related: [],
+})
