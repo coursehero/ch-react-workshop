@@ -30,5 +30,25 @@ describe('Course Hero main flow', () => {
 
     // 5: verify that you're redirected to DocLanding
     //    search for the Unlock button
+
+    cy.intercept('/search', searchData).as('search')
+    cy.intercept('/doc-info', docInfoData).as('docInfo')
+    cy.visit('/')
+    cy.contains('Make every study hour count')
+    cy.injectAxe()
+    cy.checkA11y(undefined, undefined, undefined, true)
+    cy.findByRole('searchbox').type('a')
+    cy.wait('@search')
+
+    cy.findByRole('list')
+      .findByText(/dark arts/i)
+      .click()
+
+    cy.wait('@docInfo')
+
+    cy.url().should('contain', docInfoData.department)
+
+    cy.contains(docInfoData.name)
+    cy.findByRole('button', { name: /unlock document/i })
   })
 })
