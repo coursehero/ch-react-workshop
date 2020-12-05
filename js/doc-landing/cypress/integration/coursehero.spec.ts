@@ -6,7 +6,7 @@ describe('Course Hero main flow', () => {
       { value: 'MSC 102', label: 'Muddle Studies' },
     ]
 
-    // data for mocking the /doc_info endpoint
+    // data for mocking the /doc-info endpoint
     const docInfoData = {
       department: 'DADA-101',
       name: 'Defence against Dark Arts',

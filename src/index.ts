@@ -33,7 +33,7 @@ app.get('/search', function (req, res) {
   res.send(items)
 })
 
-app.get('/doc_info', function (req, res) {
+app.get('/doc-info', function (req, res) {
   res.send(data[req.query.docName])
 })
 
