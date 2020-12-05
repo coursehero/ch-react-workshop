@@ -22,7 +22,7 @@ export const DocLanding = () => {
     async function fetchData() {
       try {
         const response = await (
-          await fetch(`${BASE_URL}/docInfo?docName=${docName}`)
+          await fetch(`${BASE_URL}/doc-info?docName=${docName}`)
         ).json()
 
         setStatus(Status.Success)

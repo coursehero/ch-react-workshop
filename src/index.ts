@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const express = require('express')
 var cors = require('cors')
 var morgan = require('morgan')
@@ -33,11 +35,10 @@ app.get('/search', function (req, res) {
   res.send(items)
 })
 
-app.get('/docInfo', function (req, res) {
+app.get('/doc-info', function (req, res) {
   res.send(data[req.query.docName])
 })
 
 app.listen(port, () => {
   console.log(`chapp listening at http://localhost:${port}`)
 })
-

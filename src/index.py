@@ -33,7 +33,7 @@ def search():
     return Response(json.dumps(titles), mimetype='application/json')
 
 
-@ app.route('/docInfo')
+@ app.route('/doc-info')
 def docInfo():
     term = request.args.get('docName')
     with open(docs_json) as json_file:
