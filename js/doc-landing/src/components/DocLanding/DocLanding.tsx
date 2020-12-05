@@ -21,10 +21,11 @@ export const DocLanding = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await (
-          await fetch(`${BASE_URL}/docInfo?docName=${docName}`)
+        // prettier-ignore
+        const response = await(
+          await fetch(`${BASE_URL}/doc_info?docName=${docName}`)
         ).json()
-
+        // prettier-ignore-end
         setStatus(Status.Success)
         setDoc(response)
       } catch (e) {
