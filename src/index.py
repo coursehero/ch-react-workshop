@@ -34,7 +34,7 @@ def search():
 
 
 @ app.route('/doc-info')
-def docInfo():
+def doc_info():
     term = request.args.get('docName')
     with open(docs_json) as json_file:
         data = json.load(json_file)

@@ -24,7 +24,6 @@ export const DocLanding = () => {
         const response = await (
           await fetch(`${BASE_URL}/doc-info?docName=${docName}`)
         ).json()
-
         setStatus(Status.Success)
         setDoc(response)
       } catch (e) {
