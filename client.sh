@@ -1,3 +1,3 @@
-cd js/doc-landing/src
+cd js/doc-landing/
 npm install
 npm start
