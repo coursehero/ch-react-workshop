@@ -36,7 +36,7 @@ describe('Course Hero main flow', () => {
     cy.visit('/')
     cy.contains('Make every study hour count')
     cy.injectAxe()
-    cy.checkA11y(undefined, undefined, undefined, true)
+    cy.checkA11y()
     cy.findByRole('searchbox').type('a')
     cy.wait('@search')
 

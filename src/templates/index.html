@@ -1,74 +1,77 @@
-<head>
-  <link
-    rel="stylesheet"
-    href="/static/styles/granite.min.css"
-    type="text/css"
-  />
-  <!-- IcoMoon CSS -->
-  <link
-    rel="stylesheet"
-    href="https://s3.amazonaws.com/icomoon.io/76834/CourseHeroIconv10/style.css?ii6j5b"
-  />
-  <link
-    rel="stylesheet"
-    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-  />
-  <link rel="stylesheet" href="/static/styles/ch.css" />
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#search-docs").autocomplete({
-        source: "/search",
-        minLength: 1,
-        select: function (event, ui) {
-          console.log(ui.item)
-          window.location.href = 'http://localhost:3000/' + ui.item.value
-        },
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="/static/styles/granite.min.css"
+      type="text/css"
+    />
+    <!-- IcoMoon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://s3.amazonaws.com/icomoon.io/76834/CourseHeroIconv10/style.css?ii6j5b"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/static/styles/ch.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $('#search-docs').autocomplete({
+          source: '/search',
+          minLength: 1,
+          select: function (event, ui) {
+            console.log(ui.item)
+            window.location.href = 'http://localhost:3000/' + ui.item.value
+          },
+        })
       })
-    })
-  </script>
-</head>
-<body>
-  <div class="main-wrapper">
-    <img src="/static/images/ch_white_logo.svg" class="logo" />
-    <div class="main">
-      <div id="tagline" class="mb-0 mb-md-8 mb-lg-6">
-        <h1 class="m-5 tagheader">Make every study hour count</h1>
-        <p class="ml-5 mb- h4 font-weight-normal ch-tag-subtitle">
-          Access 40 million course-specific study materials.
-        </p>
+    </script>
+    <title>CH APP</title>
+  </head>
+  <body>
+    <main class="main-wrapper">
+      <img src="/static/images/ch_white_logo.svg" class="logo" alt=""/>
+      <div class="main">
+        <div id="tagline" class="mb-0 mb-md-8 mb-lg-6">
+          <h1 class="m-5 tagheader">Make every study hour count</h1>
+          <p class="ml-5 mb- h4 font-weight-normal ch-tag-subtitle">
+            Access 40 million course-specific study materials.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="main-props-container">
-      <div class="hero-tab-2">
-        <button id="tab1" class="hero-tab-btn active">
-          <i class="chi-search"></i>
-          <div class="value-prop">Study Resources</div>
-        </button>
-        <div>
-          <input
-            id="search-docs"
-            class="search-input ml-1"
-            type="search"
-            placeholder="Find study guides, class notes and more."
-          />
-          <div class="btn btn-primary pr-4 mr-1 mt-1 fright">
-            <i class="chi-search-filled search-button" aria-hidden="true"></i>
+      <div class="main-props-container">
+        <div class="hero-tab-2">
+          <button id="tab1" class="hero-tab-btn active">
+            <i class="chi-search"></i>
+            <div class="value-prop">Study Resources</div>
+          </button>
+          <div>
+            <input
+              id="search-docs"
+              class="search-input ml-1"
+              type="search"
+              placeholder="Find study guides, class notes and more."
+            />
+            <div class="btn btn-primary pr-4 mr-1 mt-1 fright">
+              <i class="chi-search-filled search-button" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="get-help">
+          <div class="container py-6 py-md-7 py-lg-12 text-center mt-3">
+            <h2 class="font-weight-bold mb-4">Get help with your classes</h2>
+            <a
+              href="http://coursehero.com/register/"
+              class="btn btn-primary cta-signup-bottom"
+              data-ch-homepage-amp-tracking="Bottom Sign Up"
+              >Sign Up</a
+            >
           </div>
         </div>
       </div>
-      <div class="get-help">
-        <div class="container py-6 py-md-7 py-lg-12 text-center mt-3">
-          <h2 class="font-weight-bold mb-4">Get help with your classes</h2>
-          <a
-            href="http://coursehero.com/register/"
-            class="btn btn-primary cta-signup-bottom"
-            data-ch-homepage-amp-tracking="Bottom Sign Up"
-            >Sign Up</a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+    </main>
+  </body>
+</html>
