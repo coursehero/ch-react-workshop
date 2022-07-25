@@ -21,6 +21,7 @@ export const DocLanding = () => {
   useEffect(() => {
     async function fetchData() {
       try {
+        console.log(`${BASE_URL}/doc-info?docName=${docName}`)
         const response = await (
           await fetch(`${BASE_URL}/doc-info?docName=${docName}`)
         ).json()
