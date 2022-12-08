@@ -18,8 +18,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "types": ["cypress",  "@testing-library/cypress", "cypress-axe"],
+    "jsx": "react-jsx",
+    "types": [
+      "cypress",
+      "@testing-library/cypress",
+      "cypress-axe"
+    ],
     "baseUrl": "./"
   },
   "include": [
