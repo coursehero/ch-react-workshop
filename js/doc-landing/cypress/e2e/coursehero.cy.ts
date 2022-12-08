@@ -12,8 +12,7 @@ describe('Course Hero main flow', () => {
       name: 'Defence against Dark Arts',
       related: ['APP', 'HOW'],
       school: 'Hogwarts School of Witchcraft and Wizardry',
-      text:
-        'Phasellus ultrices elit eget condimentum blandit. Suspendisse facilisis gravida laoreet. Sed sodales lorem eget odio vehicula suscipit. Vestibulum sit amet est in ligula blandit pulvinar ac a leo. Donec eu ante vitae neque laoreet rhoncus sed non dolor. Donec tempor, ex bibendum ultrices eleifend, risus lectus placerat nulla, at aliquam nulla nulla a nisl. Mauris vitae maximus augue. Sed convallis porta leo, non suscipit est iaculis sit amet. Curabitur accumsan tincidunt pretium. Ut dictum, metus sed lobortis interdum, enim lorem aliquam neque, eu convallis lectus turpis ut ante. Mauris odio est, posuere a nulla a, sagittis luctus felis. In semper leo vel commodo fringilla. Integer porta purus odio. Fusce mattis eget tellus at porta.',
+      text: 'Phasellus ultrices elit eget condimentum blandit. Suspendisse facilisis gravida laoreet. Sed sodales lorem eget odio vehicula suscipit. Vestibulum sit amet est in ligula blandit pulvinar ac a leo. Donec eu ante vitae neque laoreet rhoncus sed non dolor. Donec tempor, ex bibendum ultrices eleifend, risus lectus placerat nulla, at aliquam nulla nulla a nisl. Mauris vitae maximus augue. Sed convallis porta leo, non suscipit est iaculis sit amet. Curabitur accumsan tincidunt pretium. Ut dictum, metus sed lobortis interdum, enim lorem aliquam neque, eu convallis lectus turpis ut ante. Mauris odio est, posuere a nulla a, sagittis luctus felis. In semper leo vel commodo fringilla. Integer porta purus odio. Fusce mattis eget tellus at porta.',
     }
 
     // TODO:
